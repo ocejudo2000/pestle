@@ -7,6 +7,9 @@ openai_api_key = st.secrets["mykey"]
 
 openai.api_key = openai_api_key
 
+st.write(f"Secreto obtenido: {openai_api_key[:5]}...")
+
+
 
 def generar_resumen_pestle(nombre_empresa, caracteres_resumen):
     dimensiones_pestle = ["Político", "Económico", "Sociocultural", "Tecnológico", "Legal", "Ecológico"]
