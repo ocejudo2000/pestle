@@ -2,7 +2,10 @@ import openai
 import streamlit as st
 
 # Configura tu API key para OpenAI
-openai.api_key = mykey
+
+openai_api_key = st.secrets["mykey"]
+
+openai.api_key = openai_api_key
 
 
 def generar_resumen_pestle(nombre_empresa, caracteres_resumen):
