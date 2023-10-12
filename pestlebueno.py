@@ -3,9 +3,9 @@ import streamlit as st
 
 # Configura tu API key para OpenAI
 
-openai_api_key = st.secrets["mykey"]
+#openai_api_key = st.secrets["mykey"]
 
-openai.api_key = openai_api_key
+openai.api_key = "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"
 
 st.write(f"Secreto obtenido: {openai_api_key[:5]}...")
 
