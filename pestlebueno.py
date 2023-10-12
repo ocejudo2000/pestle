@@ -17,7 +17,7 @@ def generar_resumen_pestle(nombre_empresa, caracteres_resumen):
     for dim in dimensiones_pestle:
         prompt = f"Genera un resumen en formato bullet point sobre el aspecto {dim} de la empresa {nombre_empresa} en {caracteres_resumen} caracteres:"
         response = openai.Completion.create(
-            engine="gpt-3.5-turbo-0613",
+            engine="text-davinci-002",
             prompt=prompt,
             max_tokens=caracteres_resumen
         )
