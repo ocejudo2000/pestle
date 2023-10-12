@@ -7,7 +7,7 @@ import streamlit as st
 
 openai.api_key = "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"
 
-st.write(f"Secreto obtenido: {openai_api_key[:5]}...")
+
 
 
 
