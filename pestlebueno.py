@@ -15,7 +15,7 @@ def generar_resumen_pestle(nombre_empresa, caracteres_resumen):
     competidores = None  # Placeholder for now
 
     for dim in dimensiones_pestle:
-        prompt = f"Genera un resumen en formato bullet point sobre el aspecto {dim} de la empresa {nombre_empresa} en {caracteres_resumen} caracteres. Además, dime quiénes son sus principales competidores:"
+        prompt = f"Genera un resumen en formato bullet point sobre el aspecto {dim} alrededor de la empresa {nombre_empresa} en {caracteres_resumen} caracteres. Además, dime quiénes son sus principales competidores:"
         response = openai.Completion.create(
             engine="text-davinci-002",
             prompt=prompt,
