@@ -1,8 +1,10 @@
-import openai
+from openai import OpenAI
 import streamlit as st
 import pandas as pd
 from pptx import Presentation
 from pptx.util import Inches
+
+client=OpeAI()
 
 # Configura tu API key para OpenAI
 openai_api_key = st.secrets["mykey"]
@@ -14,12 +16,12 @@ def generar_resumen_pestle(nombre_empresa, caracteres_resumen):
 
     for dim in dimensiones_pestle:
         prompt = f"Genera un resumen en formato bullet point sobre el entorno {dim} alrededor de la empresa {nombre_empresa} en {caracteres_resumen} caracteres. Asume un papel de consultor para mostrarle al usuario a entender como afectan o ayudan esos aspectos del entorno {dim} a esa empresa :"
-        response = openai.Completion.create(
-            engine="gpt-3.5-turbo",
+        response = client.chat.completions.create(
+            engine="gpt-3.5-turbo-0125",
             prompt=prompt,
             max_tokens=caracteres_resumen
         )
-        resumen_pestle[dim] = response.choices[0].text.strip()
+        resumen_pestle[dim] = response.choices[0].message.strip()
 
     return resumen_pestle
 
